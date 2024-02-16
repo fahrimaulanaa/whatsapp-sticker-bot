@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "firebase": "^10.8.0",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^20.3.0",
+    "qrcode-terminal": "^0.12.0",
+    "sharp": "^0.33.2",
+    "whatsapp-web.js": "^1.23.0"
+  },
+  "name": "whatsapp-sticker-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
