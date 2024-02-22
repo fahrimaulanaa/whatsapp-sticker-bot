@@ -6,6 +6,7 @@ async function getWhaleAlert(coin) {
         const data = await response.json();
         const transactions = data.transactions;
 
+        if (transactions && transactions.length > 0) {
             const messages = [];
 
             for (const transaction of transactions) {
@@ -16,15 +17,19 @@ async function getWhaleAlert(coin) {
                 messages.push(message);
             }
 
-            return messages;
-        } catch (error) {
+            return { count: messages.length, messages };
+        } else {
+            return { count: 0, messages: ['No Whale Alerts'] };
+        }
+    } catch (error) {
         console.error(error);
-        return { count: 0, messages: ['Error fetching Whale Alerts'] }; // Handle errors by returning 0 count and an error message
+        return { count: 0, messages: ['Error fetching Whale Alerts'] }; 
     }
 }
 
+
 function parseUnixTimestamp(unixTimestamp) {
-    const date = new Date(unixTimestamp * 1000); // Multiply by 1000 to convert seconds to milliseconds
+    const date = new Date(unixTimestamp * 1000); 
 
     const options = {
         day: 'numeric',

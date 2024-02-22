@@ -7,6 +7,7 @@ async function getPriceCrypto(coin) {
         return price;
     } catch (error) {
         console.error(error);
+        return "An error occurred";
     }
 }
 
@@ -21,6 +22,7 @@ async function getCryptoCategory(coin){
         }
     } catch (error) {
         console.error(error);
+        return "An error occurred";
     }
 }
 
